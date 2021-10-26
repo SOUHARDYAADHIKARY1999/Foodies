@@ -153,6 +153,21 @@
         </div>
     </section>
 
+
+    <ul class="nav">
+        <li class="nav-item" *ngFor="let menuList of menuLists">
+            <a class="nav-link" (click)="openMenuList(menuList)" href="#{menuList}">{{menuList}}</a>
+        </li>
+    </ul>
+    <ng-container *ngIf="selectedList === 'Kid' ">
+        Kid
+    </ng-container>
+    <ng-container *ngIf="selectedList === 'Women' ">
+        Women
+    </ng-container>
+    <ng-container *ngIf="selectedList === 'Men' ">
+        Men
+    </ng-container>
     
     <section class="bg-service bg-section" id="service">
       <div class="container-fluid text-center">
@@ -399,7 +414,7 @@
                               <textarea class="form-control" rows="5" id="comment" placeholder="Description"></textarea>
                           </div>
                           <div class="contact-buttons pull-left">
-                              <input type="submit" name="submit"  value="Send" />
+                              <input type="submit" name="submit"  value="Send" style="margin-right: 5px;"/>
                               <input type="reset" value="Reset" />
                           </div>
                       </form>
