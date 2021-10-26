@@ -153,21 +153,263 @@
         </div>
     </section>
 
+    <section class="bg-about bg-section" id="about">
+        <div class="container-fluid">
+            <h1 class="container-h1">Menu</h1>
+        <ul class="nav">
+            <li class="nav-item" *ngFor="let menuList of menuLists">
+                <a class="nav-link" (click)="openMenuList(menuList)" href="#{menuList}">{{menuList}}</a>
+            </li>
+        </ul>
+        <ng-container *ngIf="selectedList === 'Breakfast' ">
+            <div  class="tab-pane " id="brekfast">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Spanish tortilla
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 590</span></h5>
+                                <p class="list-group-item-text">potatoes, onion, olive oil, free-range eggs</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Quick fish cakes
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 680</span></h5>
+                                <p class="list-group-item-text">skinless cod, pollock fillets, Maris Piper, flour, olive oil, fresh green herbs, chives, mayonnaise, eggs</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Wild rice salad
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 280</span></h5>
+                                <p class="list-group-item-text">mixed rice, wild and long-grain, mixed nuts, fresh basil, fresh mint, dried apricots, extra virgin olive oil</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Chicken milanese with spaghetti
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 320</span></h5>
+                                <p class="list-group-item-text">cloves of garlic, fresh basil, olive oil, plum tomatoes, skinless free-range chicken breasts, plain flour, free-range eggs, breadcrumbs, Parmesan cheese, dried spaghetti</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Mango lassi
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 70</span></h5>
+                                <p class="list-group-item-text">green cardamom pods , optional, ripe mangos, low-fat natural yoghurt, ice cubes, runny honey</p>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="right-cover">
+                                <h3>Breakfast</h3>
+                                <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951905/new/breakfast.jpg" class="menu-img img-fluid" alt="brekfast-img">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="selectedList === 'Lunch' ">
+            <div  class="tab-pane " id="lunch">
+                <div class="row">
+                    <div class="col-sm-7">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <h5 style="text-align: left;">Spanish tortilla
+                                <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 590</span></h5>
+                            <p class="list-group-item-text">potatoes, onion, olive oil, free-range eggs</p>
+                        </li>
+                        <li class="list-group-item">
+                            <h5 style="text-align: left;">Quick fish cakes
+                                <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 680</span></h5>
+                            <p class="list-group-item-text">skinless cod, pollock fillets, Maris Piper, flour, olive oil, fresh green herbs, chives, mayonnaise, eggs</p>
+                        </li>
+                        <li class="list-group-item">
+                            <h5 style="text-align: left;">Wild rice salad
+                                <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 280</span></h5>
+                            <p class="list-group-item-text">mixed rice, wild and long-grain, mixed nuts, fresh basil, fresh mint, dried apricots, extra virgin olive oil</p>
+                        </li>
+                        <li class="list-group-item">
+                            <h5 style="text-align: left;">Chicken milanese with spaghetti
+                                <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 320</span></h5>
+                            <p class="list-group-item-text">cloves of garlic, fresh basil, olive oil, plum tomatoes, skinless free-range chicken breasts, plain flour, free-range eggs, breadcrumbs, Parmesan cheese, dried spaghetti</p>
+                        </li>
+                        <li class="list-group-item">
+                            <h5 style="text-align: left;">Mango lassi
+                                <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 70</span></h5>
+                            <p class="list-group-item-text">green cardamom pods , optional, ripe mangos, low-fat natural yoghurt, ice cubes, runny honey</p>
+                        </li>
+                    </ul>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="right-cover">
+                            <h3>Lunch</h3>
+                            <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951906/new/lunch.jpg" class="menu-img img-fluid" alt="brekfast-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="selectedList === 'Dinner' ">
+            <div  class="tab-pane " id="brekfast">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Spanish tortilla
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 590</span></h5>
+                                <p class="list-group-item-text">potatoes, onion, olive oil, free-range eggs</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Quick fish cakes
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 680</span></h5>
+                                <p class="list-group-item-text">skinless cod, pollock fillets, Maris Piper, flour, olive oil, fresh green herbs, chives, mayonnaise, eggs</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Wild rice salad
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 280</span></h5>
+                                <p class="list-group-item-text">mixed rice, wild and long-grain, mixed nuts, fresh basil, fresh mint, dried apricots, extra virgin olive oil</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Chicken milanese with spaghetti
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 320</span></h5>
+                                <p class="list-group-item-text">cloves of garlic, fresh basil, olive oil, plum tomatoes, skinless free-range chicken breasts, plain flour, free-range eggs, breadcrumbs, Parmesan cheese, dried spaghetti</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Mango lassi
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 70</span></h5>
+                                <p class="list-group-item-text">green cardamom pods , optional, ripe mangos, low-fat natural yoghurt, ice cubes, runny honey</p>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="right-cover">
+                                <h3>Dinner</h3>
+                                <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951906/new/dinner.jpg" class="menu-img img-fluid" alt="brekfast-img">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="selectedList === 'Dessert' ">
+            <div  class="tab-pane " id="brekfast">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Spanish tortilla
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 590</span></h5>
+                                <p class="list-group-item-text">potatoes, onion, olive oil, free-range eggs</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Quick fish cakes
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 680</span></h5>
+                                <p class="list-group-item-text">skinless cod, pollock fillets, Maris Piper, flour, olive oil, fresh green herbs, chives, mayonnaise, eggs</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Wild rice salad
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 280</span></h5>
+                                <p class="list-group-item-text">mixed rice, wild and long-grain, mixed nuts, fresh basil, fresh mint, dried apricots, extra virgin olive oil</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Chicken milanese with spaghetti
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 320</span></h5>
+                                <p class="list-group-item-text">cloves of garlic, fresh basil, olive oil, plum tomatoes, skinless free-range chicken breasts, plain flour, free-range eggs, breadcrumbs, Parmesan cheese, dried spaghetti</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Mango lassi
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 70</span></h5>
+                                <p class="list-group-item-text">green cardamom pods , optional, ripe mangos, low-fat natural yoghurt, ice cubes, runny honey</p>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="right-cover">
+                                <h3>Dessert</h3>
+                                <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951905/new/dessert.jpg" class="menu-img img-fluid" alt="brekfast-img">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="selectedList === 'Salads' ">
+            <div  class="tab-pane " id="brekfast">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Spanish tortilla
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 590</span></h5>
+                                <p class="list-group-item-text">potatoes, onion, olive oil, free-range eggs</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Quick fish cakes
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 680</span></h5>
+                                <p class="list-group-item-text">skinless cod, pollock fillets, Maris Piper, flour, olive oil, fresh green herbs, chives, mayonnaise, eggs</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Wild rice salad
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 280</span></h5>
+                                <p class="list-group-item-text">mixed rice, wild and long-grain, mixed nuts, fresh basil, fresh mint, dried apricots, extra virgin olive oil</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Chicken milanese with spaghetti
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 320</span></h5>
+                                <p class="list-group-item-text">cloves of garlic, fresh basil, olive oil, plum tomatoes, skinless free-range chicken breasts, plain flour, free-range eggs, breadcrumbs, Parmesan cheese, dried spaghetti</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Mango lassi
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 70</span></h5>
+                                <p class="list-group-item-text">green cardamom pods , optional, ripe mangos, low-fat natural yoghurt, ice cubes, runny honey</p>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="right-cover">
+                                <h3>Salads</h3>
+                                <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951906/new/salads.jpg" class="menu-img img-fluid" alt="brekfast-img">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="selectedList === 'Drinks' ">
+            <div  class="tab-pane " id="brekfast">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Spanish tortilla
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 590</span></h5>
+                                <p class="list-group-item-text">potatoes, onion, olive oil, free-range eggs</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Quick fish cakes
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 680</span></h5>
+                                <p class="list-group-item-text">skinless cod, pollock fillets, Maris Piper, flour, olive oil, fresh green herbs, chives, mayonnaise, eggs</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Wild rice salad
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 280</span></h5>
+                                <p class="list-group-item-text">mixed rice, wild and long-grain, mixed nuts, fresh basil, fresh mint, dried apricots, extra virgin olive oil</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Chicken milanese with spaghetti
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 320</span></h5>
+                                <p class="list-group-item-text">cloves of garlic, fresh basil, olive oil, plum tomatoes, skinless free-range chicken breasts, plain flour, free-range eggs, breadcrumbs, Parmesan cheese, dried spaghetti</p>
+                            </li>
+                            <li class="list-group-item">
+                                <h5 style="text-align: left;">Mango lassi
+                                    <span class="badge pull-right" style="background-color: rgb(46, 46, 59);">₹ 70</span></h5>
+                                <p class="list-group-item-text">green cardamom pods , optional, ripe mangos, low-fat natural yoghurt, ice cubes, runny honey</p>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="right-cover">
+                                <h3>Drinks</h3>
+                                <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951906/new/drink.jpg" class="menu-img img-fluid" alt="brekfast-img">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </ng-container>
 
-    <ul class="nav">
-        <li class="nav-item" *ngFor="let menuList of menuLists">
-            <a class="nav-link" (click)="openMenuList(menuList)" href="#{menuList}">{{menuList}}</a>
-        </li>
-    </ul>
-    <ng-container *ngIf="selectedList === 'Kid' ">
-        Kid
-    </ng-container>
-    <ng-container *ngIf="selectedList === 'Women' ">
-        Women
-    </ng-container>
-    <ng-container *ngIf="selectedList === 'Men' ">
-        Men
-    </ng-container>
+        </div>
+    </section>
     
     <section class="bg-service bg-section" id="service">
       <div class="container-fluid text-center">

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'foodies-new';
 
-  menuLists=['Kid','Women','Men']
+  menuLists=['Breakfast','Lunch','Dinner','Dessert','Salads','Drinks']
   selectedList:any
 
   constructor(){}
