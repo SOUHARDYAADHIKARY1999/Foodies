@@ -785,17 +785,7 @@ p.first::first-letter {
 }
 
 
-.footer-copyright {
-	background-color: #10222e;
-}
 
-.footer-copyright p {
-	text-align: center;
-	color: #ccc;
-	font-size: 15px;
-	padding: 10px 0;
-	margin-bottom: 0;
-}
 
 #footer .hr-foot {
 	width: 80%;
