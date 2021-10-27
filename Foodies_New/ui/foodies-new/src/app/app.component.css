@@ -834,3 +834,28 @@ p.first::first-letter {
 
 
 
+ul#navlist {
+	margin-left: 0; 
+	padding-left: 0; 
+	white-space: nowrap;
+}
+#navlist li {
+	display: inline; 
+	list-style-type: 
+	none;}
+#navlist a { 
+	padding: 3px 10px; 
+}
+#navlist a:link, #navlist a:visited {
+	color: white;  
+	background-color: #182c39;
+ text-decoration: none;
+}
+#navlist a:hover {
+	color: white; 
+	background-color: #a5512b; 
+	text-decoration: none;}
+#navlist a:focus {
+	color: white; 
+	background-color: #a5512b; 
+	text-decoration: none;}

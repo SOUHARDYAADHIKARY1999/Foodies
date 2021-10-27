@@ -77,7 +77,7 @@
                   <a class="dropdown-item" href="#">Profile</a>
                   <a class="dropdown-item" href="#">Rate Us</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Logout</a>
+                  <a class="dropdown-item" href="logout">Logout</a>
                 </div>
               </li>
           </ul>
@@ -156,11 +156,12 @@
     <section class="bg-about bg-section" id="about">
         <div class="container-fluid">
             <h1 class="container-h1">Menu</h1>
-        <ul class="nav">
+        <ul class="nav" id="navlist">
             <li class="nav-item" *ngFor="let menuList of menuLists">
                 <a class="nav-link" (click)="openMenuList(menuList)" href="#{menuList}">{{menuList}}</a>
             </li>
         </ul>
+        <p></p>
         <ng-container *ngIf="selectedList === 'Breakfast' ">
             <div  class="tab-pane " id="brekfast">
                 <div class="row">
