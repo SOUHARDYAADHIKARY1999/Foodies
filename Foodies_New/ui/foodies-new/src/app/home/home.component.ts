@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class ContentComponent implements OnInit {
-
-  title = 'foodies-new';
-
+export class HomeComponent implements OnInit {
   menuLists=['Breakfast','Lunch','Dinner','Dessert','Salads','Drinks']
   selectedList:any
+
   constructor() { }
+
 
   ngOnInit(){
     this.selectedList=this.menuLists[0]
@@ -20,5 +19,4 @@ export class ContentComponent implements OnInit {
   openMenuList(menuList:any){
     this.selectedList=menuList
   }
-
 }

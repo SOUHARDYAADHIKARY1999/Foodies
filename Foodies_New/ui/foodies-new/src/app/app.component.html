@@ -46,16 +46,14 @@
 
   </head>
 
-
-
-
     <body id="myPage"  data-spy="scroll" data-target=".navbar" data-offset="60">
         <app-header></app-header>
         <app-sidebar></app-sidebar>
         <div style="margin-left: 60px;">
-            <app-content></app-content>
-            <app-footer></app-footer>
+            <router-outlet></router-outlet>
         </div>
+        <app-footer></app-footer>
     </body>
+
 </html>
-<router-outlet></router-outlet>
+

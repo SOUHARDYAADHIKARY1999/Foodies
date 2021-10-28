@@ -6,18 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'foodies-new';
+  title = 'foodies-new';  
 
-  menuLists=['Breakfast','Lunch','Dinner','Dessert','Salads','Drinks']
-  selectedList:any
+  constructor() { }
 
-  constructor(){}
-
-  ngOnInit(){
-    this.selectedList=this.menuLists[0]
-  }
-
-  openMenuList(menuList:any){
-    this.selectedList=menuList
+  ngOnInit(): void {
   }
 }
