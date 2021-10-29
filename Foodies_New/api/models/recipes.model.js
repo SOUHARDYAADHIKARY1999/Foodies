@@ -6,6 +6,6 @@ const recipeSchema=mongoose.Schema({
     recipeTime:String
 })
 
-const recipeModel = mongoose.model('Foods',recipeSchema);
+const recipeModel = mongoose.model('Recipes',recipeSchema);
 
 module.exports = recipeModel;
