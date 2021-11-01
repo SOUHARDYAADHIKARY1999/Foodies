@@ -6,15 +6,18 @@ var logger = require('morgan');
 
 
 
-const connectdb=require('./database/mongoose');
-connectdb();
+
+
+
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var foodsRouter = require('./routes/foods');
-var recipesRouter =require('./routes/recipes');
-var homeRouter=require('./routes/home');
+var recipesRouter = require('./routes/recipes');
+var homeRouter = require('./routes/home');
+const connectdb = require('./database/mongoose');
+connectdb();
 
 
 var app = express();
@@ -35,6 +38,9 @@ app.use('/recipes',recipesRouter);
 app.use('/foods',foodsRouter);
 app.use('/home',homeRouter);
 
+
+app.use(express.json({extended:false}));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -54,7 +60,7 @@ app.use(function(err, req, res, next) {
 
 
 
-
+// defining the port number
 const port = process.env.port || 3000; 
 app.listen(port,()=>console.log('Server started'));
 
