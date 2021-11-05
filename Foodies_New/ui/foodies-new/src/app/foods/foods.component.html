@@ -1,1 +1,15 @@
-<p style="margin-left: 60px; margin-top: 160px;">foods works!</p>
+<div style="margin-left: 60px; margin-top: 160px;">
+  <table >
+    <tr *ngFor="let food of foodResult">
+      <td>
+        {{food.foodName}}
+      </td>
+      <td>
+        {{food.foodPrice}}
+      </td>
+      <td>
+        {{food.foodType}}
+      </td>
+    </tr>
+  </table>
+</div>
