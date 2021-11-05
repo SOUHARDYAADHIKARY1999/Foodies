@@ -1,23 +1,26 @@
+// importing the important packages which are required
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser =require('body-parser');
+var cors=require('cors');
+
+// connecting with the database in mongodb atlas
+const connectdb = require('./database/mongoose');
+connectdb();
 
 
 
-
-
-
-
+//getting the routes
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var foodsRouter = require('./routes/foods');
 var recipesRouter = require('./routes/recipes');
 var homeRouter = require('./routes/home');
-const connectdb = require('./database/mongoose');
-connectdb();
+
 
 
 var app = express();
@@ -26,11 +29,19 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+/*app.use(bodyParser());
+app.use(bodyParser.json({limit:'5mb'}))
+app.use(bodyParser.urlencoded({extended: false}));*/
+
+
+
+// defining the url paths of the routes
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -43,7 +54,15 @@ app.use(express.json({extended:false}));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+
+  //res.setHeader('Access-Control-Allow-Origin','http://localhost:4200/');
+  //res.setHeader('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  //res.setHeader('Access-Control-Allow-Headers','X-Requested-With,content-type');
+  //res.setHeader('Access-Control-Allow-Credentials',true);
+
+
+  //next(createError(404));
+  next();
 });
 
 // error handler

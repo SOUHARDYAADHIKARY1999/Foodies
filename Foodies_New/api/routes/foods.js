@@ -4,9 +4,9 @@ var router = express.Router();
 
 
 /* GET home page. */
-/*router.get('/', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
-});*/
+});
 
 router.get('/',(req,res)=>{
   foodModel.find((err,docs)=>{
@@ -14,7 +14,7 @@ router.get('/',(req,res)=>{
       res.send(docs);
     }
     else{
-      console.log('Errorin retrieving employees'+JSON.stringify(err,undefined,2));
+      console.log('Error in retrieving users'+JSON.stringify(err,undefined,2));
     }
   });
 })
