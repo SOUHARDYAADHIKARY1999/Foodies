@@ -21,6 +21,8 @@ export class FoodService {
     let url=environment.FOOD_BASE_URL;
     //return this.httpClient.get(url).map((response:Response)=>response.json);
     
+
+    
     return this.httpClient.get(url);
   }
 }
