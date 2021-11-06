@@ -1,8 +1,8 @@
 export const environment = {
     production: false,
 
-    BASE_URL: 'http://localhost:3000',
-    FOOD_BASE_URL : 'http://localhost:3000/foods',
+    BASE_URL: 'http://localhost:8080',
+    FOOD_BASE_URL : 'http://localhost:8080/foods',
     FOOD:{
         GET_ALL_FOODS: '/'
     },
