@@ -9,7 +9,8 @@ export class HomeComponent implements OnInit {
   menuLists=['Breakfast','Lunch','Dinner','Dessert','Salads','Drinks']
   selectedList:any
 
-  constructor() { }
+  constructor() {
+  }
 
 
   ngOnInit(){

@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FoodsComponent } from './foods/foods.component';
+import { HomeComponent } from './home/home.component';
+import { RecipesComponent } from './recipes/recipes.component';
 
 
 const routes: Routes = [
   
-    {path: '',loadChildren:()=>import('./home/home.module').then(m=>m.HomeModule)},
-    { path: 'foods', loadChildren: () => import('./foods/foods.module').then(m => m.FoodsModule) },  
-    { path: 'recipes', loadChildren: () => import('./recipes/recipes.module').then(m => m.RecipesModule) },
-    { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) }
-      
+    /*{path: '',loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)},*/
+    {path: '',component:HomeComponent},
+    { path: 'recipes', component:RecipesComponent},
+    { path: 'home', component:HomeComponent },
+    { path: 'foods', component:FoodsComponent }
+
     ];
 
 @NgModule({

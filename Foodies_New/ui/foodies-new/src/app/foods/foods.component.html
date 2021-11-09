@@ -1,39 +1,40 @@
 <div class="container" style="width: 50%; margin-top: 160px; margin-bottom: 50px;">
-  <div *ngFor="let food of foodResult; let i=index" style="margin:20px;">
-    <div class="item2"> 
-      <div class="card" style="width: 500px;">
-        <div class="row no-gutters">
-            <div class="col-sm-5">
-              <ng-container *ngIf="food.foodType==='Breakfast'">
-                <img class="card-img" src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951905/new/breakfast.jpg" alt="Suresh Dasari Card">
-              </ng-container>
-              <ng-container *ngIf="food.foodType==='Lunch'">
-                <img class="card-img"src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951906/new/lunch.jpg">
-              </ng-container>
-              <ng-container *ngIf="food.foodType==='Dinner'">
-                <img class="card-img"src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951906/new/dinner.jpg">
-              </ng-container>
-              <ng-container *ngIf="food.foodType==='Dessert'">
-                <img class="card-img"src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951905/new/dessert.jpg">
-              </ng-container>
-              <ng-container *ngIf="food.foodType==='Salads'">
-                <img class="card-img"src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951906/new/salads.jpg">
-              </ng-container>
-              <ng-container *ngIf="food.foodType==='Drinks'">
-                <img class="card-img"src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951906/new/drink.jpg">
-              </ng-container>
-            </div>
-            <div class="col-sm-7">
-                <div class="card-body">
-                    <h5 class="card-title">{{food.foodName}}</h5>
-                    <p class="card-text">{{food.foodType}} item</p>
-                    <p class="card-text">Price: ₹{{food.foodPrice}}
-                        <a href="#" class="btn btn-primary" >Buy Now</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div *ngFor="let food of foodResult; let i=index" style="margin:20px;">
+      <div class="item2"> 
+        <div class="card" style="width: 500px;">
+          <div class="row no-gutters">
+              <div class="col-sm-5">
+                <ng-container *ngIf="food.foodType==='Breakfast'">
+                  <img class="card-img" src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951905/new/breakfast.jpg" alt="Suresh Dasari Card">
+                </ng-container>
+                <ng-container *ngIf="food.foodType==='Lunch'">
+                  <img class="card-img"src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951906/new/lunch.jpg">
+                </ng-container>
+                <ng-container *ngIf="food.foodType==='Dinner'">
+                  <img class="card-img"src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951906/new/dinner.jpg">
+                </ng-container>
+                <ng-container *ngIf="food.foodType==='Dessert'">
+                  <img class="card-img"src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951905/new/dessert.jpg">
+                </ng-container>
+                <ng-container *ngIf="food.foodType==='Salads'">
+                  <img class="card-img"src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951906/new/salads.jpg">
+                </ng-container>
+                <ng-container *ngIf="food.foodType==='Drinks'">
+                  <img class="card-img"src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536951906/new/drink.jpg">
+                </ng-container>
+              </div>
+              <div class="col-sm-7">
+                  <div class="card-body">
+                      <h5 class="card-title">{{food.foodName}}</h5>
+                      <p class="card-text">{{food.foodType}} item</p>
+                      <p class="card-text">Price: ₹{{food.foodPrice}}
+                          <a href="#" class="btn btn-primary" >Buy Now</a>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
     </div>
   </div>
-</div>
+  

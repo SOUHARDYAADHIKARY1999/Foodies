@@ -37,10 +37,15 @@ router.get('/:id',(req,res)=>{
 })
 
 router.post('/',async (req,res)=>{
-  const{firstName,lastName} = req.body;
+  //the parameter to be passed in the api
+  const{firstName,lastName,email,password,isAdmin} = req.body;
   let userSchema = {};
   userSchema.firstName=firstName;
   userSchema.lastName=lastName;
+  userSchema.email=email;
+  userSchema.password=password;
+  userSchema.isAdmin=isAdmin;
+
   let usermodel = new userModel(userSchema);
   await usermodel.save();
   res.json(usermodel);

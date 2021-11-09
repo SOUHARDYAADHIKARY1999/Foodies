@@ -115,6 +115,10 @@ nav ul,nav li {
     color:#fff;
     background-color:#5fa2db;
 }
+.logout li:hover>a{
+    color: #fff;
+    background-color: rgb(228, 42, 42);
+}
 .area {
     float: left;
     background: #e2e2e2;

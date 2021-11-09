@@ -1,9 +1,8 @@
-import { Component,OnInit } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../services/food.service';
 
 @Component({
-  selector: 'app-foods',
+  selector: 'app-food',
   templateUrl: './foods.component.html',
   styleUrls: ['./foods.component.css'],
   providers:[FoodService]
@@ -13,7 +12,8 @@ export class FoodsComponent implements OnInit {
   foodResult:any;
   foodList:any;
   constructor(private foodService:FoodService) { }
-  ngOnInit(): void {
+
+  ngOnInit(): void { 
     this.getFoodList();
   }
   getFoodList(){
