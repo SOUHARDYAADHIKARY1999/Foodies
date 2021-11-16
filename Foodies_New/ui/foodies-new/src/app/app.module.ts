@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FoodsComponent } from './foods/foods.component';
+import { AuthComponent } from './auth/auth.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { FoodsComponent } from './foods/foods.component';
     FooterComponent,
     SidebarComponent,
     FoodsComponent,
+    AuthComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
