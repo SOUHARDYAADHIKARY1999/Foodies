@@ -4,14 +4,14 @@ export class UserModel{
     lastName: string;
     email: string;
     password: string;
-    isAdmin: boolean;
+    saltSecret: string;
 
-    constructor(firstname:string, lastname:string, email:string, password:string, isadmin:boolean){
+    constructor(firstname:string, lastname:string, email:string, password:string, saltSecret:string){
         this.firstName=firstname;
         this.lastName=lastname;
         this.email=email;
         this.password=password;
-        this.isAdmin=isadmin;
+        this.saltSecret=saltSecret;
     }
 
     getfirstName():string{
@@ -26,8 +26,8 @@ export class UserModel{
     getPassword():string{
         return this.password;
     }
-    getRole():boolean{
-        return this.isAdmin;
+    getSaltSecret():string{
+        return this.saltSecret;
     }
     
 }

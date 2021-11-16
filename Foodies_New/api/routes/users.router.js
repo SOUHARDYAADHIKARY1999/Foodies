@@ -38,17 +38,18 @@ router.get('/:id',(req,res)=>{
 
 router.post('/',async (req,res)=>{
   //the parameter to be passed in the api
-  const{firstName,lastName,email,password,isAdmin} = req.body;
+  const{firstName,lastName,email,password,saltSecret} = req.body;
   let userSchema = {};
   userSchema.firstName=firstName;
   userSchema.lastName=lastName;
   userSchema.email=email;
   userSchema.password=password;
-  userSchema.isAdmin=isAdmin;
+  userSchema.saltSecret=saltSecret;
 
   let usermodel = new userModel(userSchema);
   await usermodel.save();
   res.json(usermodel);
 })
+
 
 module.exports = router;

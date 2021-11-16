@@ -13,6 +13,7 @@ import { Food } from '../models/food.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class FoodService {
 
   constructor(private httpClient:HttpClient) {}
@@ -20,8 +21,6 @@ export class FoodService {
   getFoods(){
     let url=environment.FOOD_BASE_URL;
     //return this.httpClient.get(url).map((response:Response)=>response.json);
-    
-
     
     return this.httpClient.get(url);
   }

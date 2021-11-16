@@ -16,10 +16,10 @@ connectdb();
 //getting the routes
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var foodsRouter = require('./routes/foods');
-var recipesRouter = require('./routes/recipes');
-var homeRouter = require('./routes/home');
+var usersRouter = require('./routes/users.router');
+var foodsRouter = require('./routes/foods.router');
+var recipesRouter = require('./routes/recipes.router');
+var homeRouter = require('./routes/home.router');
 
 
 
@@ -55,10 +55,10 @@ app.use(express.json({extended:false}));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 
-  //res.setHeader('Access-Control-Allow-Origin','http://localhost:4200/');
-  //res.setHeader('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  //res.setHeader('Access-Control-Allow-Headers','X-Requested-With,content-type');
-  //res.setHeader('Access-Control-Allow-Credentials',true);
+  res.setHeader('Access-Control-Allow-Origin','http://localhost:4200/');
+  res.setHeader('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers','X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials',true);
 
 
   //next(createError(404));
