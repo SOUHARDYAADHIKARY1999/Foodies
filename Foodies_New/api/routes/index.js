@@ -9,5 +9,5 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/register',ctrlUser.register);
-
+router.post('/authenticate',ctrlUser.authenticate);
 module.exports = router;
