@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 
@@ -20,6 +20,13 @@ import { AuthComponent } from './auth/auth.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 //routes
 import { appRoutes } from './routes';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { AuthService } from './services/auth.service';
+
+// other
+import { AuthenticateGuard } from './authentication/authenticate.guard';
+import { AuthInterceptor } from './authentication/auth.interceptor';
 
 
 @NgModule({
@@ -31,6 +38,8 @@ import { appRoutes } from './routes';
     FoodsComponent,
     AuthComponent,
     SignUpComponent,
+    UserProfileComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,9 +47,13 @@ import { appRoutes } from './routes';
     HttpClientModule,
     FormsModule,
     CommonModule,
-    RouterModule.forRoot(appRoutes)
+    //RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true
+  },AuthService,AuthenticateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

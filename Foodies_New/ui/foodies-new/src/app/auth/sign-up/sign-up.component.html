@@ -1,4 +1,8 @@
-<div class="container" style="margin-top: 200px;" >
+
+<div class="container" >
+    <div>
+        <img src="/assets/img/users.png" id="icon" alt="User Icon" style="height: 100px; width: 100px;"/>
+    </div>
     <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)"> 
 
         <input type="text" #firstName="ngModel" [(ngModel)]="authService.selectedUser.firstName" name="firstName" 
