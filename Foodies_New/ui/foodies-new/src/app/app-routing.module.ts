@@ -18,7 +18,7 @@ const routes: Routes = [
       path: 'recipes', component:RecipesComponent,canActivate:[AuthenticateGuard]
     },
     { path: 'home', component:HomeComponent },
-    { path: 'foods', component:FoodsComponent,canActivate:[AuthenticateGuard] },
+    { path: 'foods', component:FoodsComponent},
     
     {
       path: 'signup', component: AuthComponent,
@@ -30,9 +30,9 @@ const routes: Routes = [
       children: [{ path: '', component: SignInComponent }]
     },
     {
-      path:'userprofile',component:UserProfileComponent,canActivate:[AuthenticateGuard]},
+      path:'userprofile',component:UserProfileComponent},
     {
-      path: '', redirectTo: '/login', pathMatch: 'full'
+      path: '', redirectTo: 'login', pathMatch: 'full'
     },
 
     ];
