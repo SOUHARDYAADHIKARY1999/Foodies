@@ -22,7 +22,7 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(){
     if(this.authService.isLoggedIn()){
-      this.router.navigateByUrl('/userprofile');
+      this.router.navigateByUrl('/home');
     }
   }
 
@@ -30,7 +30,7 @@ export class SignInComponent implements OnInit {
     this.authService.login(form.value).subscribe(
       res=>{
         this.authService.setToken(res['token']);
-        this.router.navigateByUrl('/userprofile');
+        this.router.navigateByUrl('/home');
       },
       err=>{
         this.serverErrorMessages=err.error.message;

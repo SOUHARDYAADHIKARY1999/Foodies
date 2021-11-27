@@ -1,0 +1,165 @@
+<div class="fitter">
+    <p style="height: 70px;"></p>
+    <div class="container">
+        <table>
+            <tr>
+                <td style="width: 50%;">
+                    <table>
+                        <tr>
+                            <td>
+                                <h1 id="name" class="recipe-name">{{name}}</h1>
+                            </td>
+                            <td style="width:50%;">
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table style="width: 70%; margin-left: 30px;">
+                        <tr>
+                            <td>
+                                <div *ngIf="veg">
+                                    <img src="assets/img/vegetarian.png" class="info-img" />
+                                    <p class="info-text">vegetarian</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div *ngIf="!veg">
+                                    <img src="assets/img/non-veg.png" class="info-img" />
+                                    <p class="info-text">non vegetarian</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div *ngIf="healthy">
+                                    <img src="assets/img/protein.svg" class="info-img" />
+                                    <p class="info-text">healthy</p>
+                                </div>
+                            </td>
+                            
+                        </tr>
+                        <br>
+                        <tr>
+                            <td>
+                                <div *ngIf="dairyFree">
+                                    <img src="assets/img/dairy-free.svg" class="info-img" />
+                                    <p class="info-text">dairy-free</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div *ngIf="!dairyFree">
+                                    <img src="assets/img/dairy.png" class="info-img" />
+                                    <p class="info-text">dairy-product</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div *ngIf="glutenFree">
+                                    <img src="assets/img/gluten-free.svg" class="info-img" />
+                                    <p class="info-text">gluten-free</p>
+                                </div>
+                            </td>
+                            
+                        </tr>
+                    </table>
+                    <br>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="width: 25%;" class="recipe-info">
+                                <div>
+                                    <h1>{{servings}}</h1>
+                                    <p style="text-align: center;">Serving</p>
+                                </div>
+                            </td>
+                            <td style="width: 25%;" class="recipe-info">
+                                <div>
+                                    <h1>{{numberOfIngredients}}</h1>
+                                    <p style="text-align: center;">Ingredients</p>
+                                </div>
+                            </td>
+                            <td style="width: 25%;" class="recipe-info">
+                                <div>
+                                    <h1>{{readyInMinutes}}</h1>
+                                    <p style="text-align: center;">Minutes</p>
+                                </div>
+                            </td>
+                            <td style="width: 25%;">
+                                <div>
+                                    <h1>₹{{price}}</h1>
+                                    <p style="text-align: center;">Price</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 50%;">
+                    <img [src]="image" class="recipe-image">
+                </td>
+            </tr>
+        </table>
+        <div>
+            <ul class="nav" style="margin-left: 10px;">
+                <li *ngFor="let c of cuisines; let i =index" class="cuisines">
+                    <b>{{c}}</b>
+                </li>
+            </ul>
+        </div>
+        <br>
+        <div id="summary" class="summary"></div>
+        <br>
+        <hr>
+        <div style="height: 20px;"></div>
+        <h1 class="ingredient-equipemnt-header">Requirements</h1>
+        <br>
+        <table style="width: 100%;">
+            <tr>
+                <th style="width:45%">
+                    <h4 class="ingredient-equipemnt-header">Ingredients</h4>
+                </th>
+                <th style="width:10%"></th>
+                <th style="width:45%">
+                    <h4 class="ingredient-equipemnt-header">Equipments</h4>
+                </th>
+            </tr>
+            <tr>
+                
+            <td style="width:45%" class="ingredient-box">
+                <ol class="ingredients-list check-list1" *ngFor="let iName of ingredientsNameList; let i =index">
+                    <li>{{ingredientsQunatityList[i]}}<b>{{iName}}</b></li>
+                </ol>
+            </td>
+            <td style="width:10%">
+            </td>
+            <td style="width:45%;"class="equipmnet-box">
+                <ol class="ingredients-list check-list2" *ngFor="let eName of equipmentList;">
+                    <li><b>{{eName}}</b></li>
+                </ol>
+            </td>
+        </tr>
+        </table>
+        <br>
+        <hr>
+        <div style="height: 20px;"></div>
+        <h2 style="text-align: left; margin-left: 10px;">Directions</h2>
+            <br>
+            <ul *ngFor="let inst of recipeInstrucations; let i=index">
+                <li>
+                    <div>
+                        <span class="recipe-number">STEP {{i+1}}</span>
+                        <br>
+                        <span style="margin-left: 10px;">{{inst}}</span>
+                    </div>
+                </li>
+            </ul>
+        <br>
+        <hr>
+        <div style="height: 20px;"></div>
+        <h2 style="text-align: left; margin-left: 10px;">Recipe Tags</h2>
+        <div style="height: 20px;"></div>
+        <ul class="nav" style="margin-left: 10px;">
+            <li *ngFor="let tag of recipeTag; let i =index" class="recipe-tag">
+                <b>{{tag}}</b>
+            </li>
+        </ul>
+        <!--<a href="foodrecipe#name"> ppkpkpkpkpkpk</a>-->
+        <div style="height: 200px;"></div>
+        
+    </div>
+</div>

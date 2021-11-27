@@ -11,6 +11,8 @@ var cors=require('cors');
 require('./config/passportConfig');
 const passport =require('passport');
 
+
+
 // connecting with the database in mongodb atlas
 const connectdb = require('./database/mongoose');
 connectdb();

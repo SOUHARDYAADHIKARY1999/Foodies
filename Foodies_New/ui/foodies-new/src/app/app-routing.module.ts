@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthenticateGuard } from './authentication/authenticate.guard';
+import { CloudKitchenComponent } from './cloud-kitchen/cloud-kitchen.component';
+import { FoodRecipeComponent } from './food-recipe/food-recipe.component';
 
 
 const routes: Routes = [
@@ -15,7 +17,13 @@ const routes: Routes = [
     //{path: '',loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)},
     //{path: '',component:SignUpComponent},
     { 
-      path: 'recipes', component:RecipesComponent,canActivate:[AuthenticateGuard]
+      path: 'recipes', component:RecipesComponent
+    },
+    {
+      path: 'foodrecipe',component:FoodRecipeComponent
+    },
+    {
+      path: 'cloud-kitchen',component:CloudKitchenComponent
     },
     { path: 'home', component:HomeComponent },
     { path: 'foods', component:FoodsComponent},

@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit(){
+  ngOnInit(){ 
     this.selectedList=this.menuLists[0]
   }
 

@@ -40,6 +40,10 @@ hr {
 	max-width: 100%;
 }
 
+.fitter{
+    margin-top: 60px;
+    margin-left: 10px;
+}
 
 .container-h1 {
     font-family: 'Lora', serif;

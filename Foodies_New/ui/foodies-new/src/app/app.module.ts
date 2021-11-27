@@ -27,6 +27,9 @@ import { AuthService } from './services/auth.service';
 // other
 import { AuthenticateGuard } from './authentication/authenticate.guard';
 import { AuthInterceptor } from './authentication/auth.interceptor';
+import { CloudKitchenComponent } from './cloud-kitchen/cloud-kitchen.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FoodRecipeComponent } from './food-recipe/food-recipe.component';
 
 
 @NgModule({
@@ -40,6 +43,8 @@ import { AuthInterceptor } from './authentication/auth.interceptor';
     SignUpComponent,
     UserProfileComponent,
     SignInComponent,
+    CloudKitchenComponent,
+    FoodRecipeComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +52,7 @@ import { AuthInterceptor } from './authentication/auth.interceptor';
     HttpClientModule,
     FormsModule,
     CommonModule,
+    NgbModule,
     //RouterModule.forRoot(appRoutes)
   ],
   providers: [{
