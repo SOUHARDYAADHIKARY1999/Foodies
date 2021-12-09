@@ -1,7 +1,33 @@
-<div class="container" style="width: 50%; margin-top: 160px; margin-bottom: 50px;">
+<div class="fitter">
+  <p style="height: 70px;"></p>
+    <div class="container">
+      <carousel 
+          [loop]=true
+          [height]=500 
+          [cellWidth]=100 
+          [cellsToShow]=1 
+          [dots]=true 
+          [arrows]=true>
+        <div class="carousel-cell"><a href="wrap-foods">
+          <img src="https://product-assets.faasos.io/production/product/image_1620280380694_Banner%201%20%281%29.jpg">
+        </a>
+        </div>
+        <div class="carousel-cell"><a href="wrap-foods">
+          <img src="https://product-assets.faasos.io/production/product/image_1620280934986_Faasos%20Combo_3%20May_Signature%20Wraps%20%281%29%20%281%29.jpg">
+        </a>
+        </div>
+        <div class="carousel-cell"><a href="wrap-foods">
+          <img src="https://product-assets.faasos.io/production/product/image_1629953295371_Munch-%20Creative-approved..jpg">
+        </a>
+        </div>
+        
+      </carousel>
+  </div>
+</div>
+<!--<div class="container" style="width: 50%; margin-top: 160px; margin-bottom: 50px;">
     <div *ngFor="let food of foodResult; let i=index" style="margin:20px;">
       <div class="item2"> 
-        <div class="card" style="width: 500px;">
+        <div class="card" style="width: 500px;"> 
           <div class="row no-gutters">
               <div class="col-sm-5">
                 <ng-container *ngIf="food.foodType==='Breakfast'">
@@ -36,5 +62,5 @@
       </div>
       </div>
     </div>
-  </div>
+  </div>-->
   

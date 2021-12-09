@@ -17,7 +17,7 @@ router.get('/',(req,res)=>{
       console.log('Error in retrieving users'+JSON.stringify(err,undefined,2));
     }
   });
-})
+}) 
 
 
 router.post('/',async(req,res)=>{

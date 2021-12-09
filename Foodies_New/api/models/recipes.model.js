@@ -2,8 +2,10 @@ const mongoose=require('mongoose')
 
 const recipeSchema=mongoose.Schema({
 
-    recipeName:String,
-    recipeTime:String
+    name:String,
+    picture_url:String,
+    api_id:String
+
 })
 
 const recipeModel = mongoose.model('Recipes',recipeSchema);

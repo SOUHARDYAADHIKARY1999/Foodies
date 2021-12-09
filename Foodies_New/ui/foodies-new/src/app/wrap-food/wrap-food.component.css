@@ -1,0 +1,81 @@
+.fitter{
+    margin-top: 60px;
+    margin-left: 10px;
+    font-family: Muli, sans-serif;
+}
+.sidenav-left {
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    padding-top: 20px;
+    margin-left: 180px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+  }
+  .sidenav-left a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #b8b8b8;
+    display: block;
+  }
+  
+  .sidenav-left a:hover {
+    color: #000;
+    cursor: pointer;
+  }
+  .sidenav-left a:active{
+    color: #000;
+  }
+
+
+  .sidenav-right {
+    width: 400px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: white;
+    padding: 20px;
+    margin-right: 55px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    border-radius: 5px;
+  }
+  
+  .sidenav-right a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #6541b9;
+    display: block;
+  }
+  
+  .sidenav-right a:hover {
+    color: #9034fa;
+    cursor: pointer;
+  }
+  .main {
+    margin-left: 190px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    width: 710px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+.veg-nonveg{
+  height: 17px;
+  width: 17px;
+  float: left;
+  
+}  
+.col-sm-6{
+  padding: 0 5px;
+  height: 70%;
+}

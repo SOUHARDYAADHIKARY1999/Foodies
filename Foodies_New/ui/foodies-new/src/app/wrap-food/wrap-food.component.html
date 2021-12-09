@@ -1,0 +1,85 @@
+<div class="fitter">
+    <p style="height: 40px;"></p>
+    <div class="container" style="margin-left: 95px;">
+        <div class="">
+            <h2 style="text-align: start;">
+                <b>Order Food Online in Foodies Wrapszz</b>
+            </h2>
+        </div>
+        <hr>
+        <div id="add-spacing">
+        <div class="sidenav-left">
+            <ul  class="nav"  *ngFor="let div of divisionArray">
+                <li><a href="wrap-foods#{{div}}">{{changeName(div)}}</a>
+                    <div></div>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div *ngFor="let arr1 of final_div_arr;let i = index">
+                <span id="{{arr1[0].wrapFoodDivision}}" style="margin-left: 1px;">
+                    <b>{{changeName(arr1[0].wrapFoodDivision)}}</b>
+                </span>
+                <div class="row">
+                    <div class="col-sm-10" >
+                        <div class="row">
+                            <div class="col-sm-6" *ngFor="let k of arr1;" >
+                                <div class="card recipe-card" style="width: 18rem; margin: 10px;">
+                                    <img class="card-img-top" [src]="k.wrapFoodImageUrl" alt="Card image cap">
+                                    <div class="card-body">
+                                        <table style="width: 100%;">
+                                            <tr style="width: 100%;">
+                                                <td style="width: 70%; ">
+                                                    <span
+                                                        style="float: left; font-size: 15px;">{{k.wrapFoodName}}</span>
+                                                </td>
+                                                <td style="width: 30%;">
+                                                    <div style="display: inline-block;">
+                                                        <img *ngIf="k.wrapFoodVeg" src="assets/img/veg-item-symbol.png"
+                                                            class="veg-nonveg">
+                                                        <img *ngIf="!k.wrapFoodVeg"
+                                                            src="assets/img/non-veg-item-symbol.png" class="veg-nonveg">
+                                                        <p style="float: left; font-size: 12px; margin-left: 2px;"> ₹
+                                                            {{k.wrapFoodPrice}}</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="width: 100%;">
+                                            <tr></tr>
+                                        </table>
+                                        <table>
+                                            <tr style="width: 100%;">
+                                                <td style="width: 30%;">
+                                                    <div style="background-color: rgb(16, 156, 3); padding: 5px;">
+                                                        <span class="fa fa-star"
+                                                            style="height: 2px; width: 2px;margin: 1px; color: white;"></span>
+                                                        <span
+                                                            style="margin-left: 20px; color: white;">{{k.wrapFoodRaiting}}</span>
+                                                    </div>
+                                                </td>
+                                                <td style="width: 50%;">
+
+                                                </td>
+                                                <td style="width: 20%;">
+                                                    <button type="button" class="btn btn-warning" (click)="addItem(k.wrapFoodName)"> ADD</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="width: 84%;">
+            </div>
+        </div>
+        <div class="sidenav-right">
+            <app-side-cart></app-side-cart>
+                <!--<a id="wrap-foods#ji">{{div}}</a>-->
+        </div>
+    </div>
+
+    </div>
+</div>

@@ -18,6 +18,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FoodsComponent } from './foods/foods.component';
 import { AuthComponent } from './auth/auth.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { CloudKitchenComponent } from './cloud-kitchen/cloud-kitchen.component';
+import { FoodRecipeComponent } from './food-recipe/food-recipe.component';
+import { HomeComponent } from './home/home.component';
 //routes
 import { appRoutes } from './routes';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -27,9 +31,17 @@ import { AuthService } from './services/auth.service';
 // other
 import { AuthenticateGuard } from './authentication/authenticate.guard';
 import { AuthInterceptor } from './authentication/auth.interceptor';
-import { CloudKitchenComponent } from './cloud-kitchen/cloud-kitchen.component';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FoodRecipeComponent } from './food-recipe/food-recipe.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { WrapFoodComponent } from './wrap-food/wrap-food.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { AppMaterialModule } from './app.material.module';
+import { SideCartComponent } from './side-cart/side-cart.component';
+import { CartItemComponent } from './side-cart/cart-item/cart-item.component';
+import { FoodCrudComponent } from './food-crud/food-crud.component';
+
 
 
 @NgModule({
@@ -45,6 +57,12 @@ import { FoodRecipeComponent } from './food-recipe/food-recipe.component';
     SignInComponent,
     CloudKitchenComponent,
     FoodRecipeComponent,
+    HomeComponent,
+    RecipesComponent,
+    WrapFoodComponent,
+    SideCartComponent,
+    CartItemComponent,
+    FoodCrudComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +71,10 @@ import { FoodRecipeComponent } from './food-recipe/food-recipe.component';
     FormsModule,
     CommonModule,
     NgbModule,
+    IvyCarouselModule,
+    CarouselModule,
+    AppMaterialModule,
+    BrowserAnimationsModule
     //RouterModule.forRoot(appRoutes)
   ],
   providers: [{

@@ -588,32 +588,85 @@ export class FoodRecipeComponent implements OnInit {
   }
 
    
-  ngOnInit(){
-    //this.recipe.getData(this.recipe.recipe_id).subscribe(data=>{
-    /*this.recipe.getData('1528053').subscribe(data=>{  
+  ngOnInit():void{
+    /*this.recipe.getData(this.recipe.recipe_id).subscribe(data=>{
+    this.recipe.getData('1528053').subscribe(data=>{  
       console.log(data);
       //console.log(data.toString());
       this.recipe_data=JSON.stringify(data);
       this.recipe_object=JSON.parse(this.recipe_data);
       this.fun()
     })*/
-    console.log(this.myData);
+    this.recipe.getData(this.recipe.recipe_id).subscribe(data=>{
+        console.warn(this.recipe.recipe_id);
+        console.log(data);
+        this.recipe_data=JSON.stringify(data);
+        this.recipe_object=JSON.parse(this.recipe_data);
+        this.data_retrieval_api();
+    })
+    /*console.log(this.myData);
     this.recipe_data=JSON.stringify(this.myData);
     this.recipe_object=JSON.parse(this.recipe_data);
+    this.data_retrieval_json();*/
     
-    this.data_retrieval();
-
   }
-  /*fun(){
-    this.helthy=this.recipe_object.veryHealthy
-    this.veg=this.recipe_object.vegetarian;
+  data_retrieval_api(){
+    this.name=this.recipe_object.title;
+    this.image=this.recipe_object.image;
+    this.healthy=this.recipe_object.veryHealthy;
+    this.veg=this.recipe_object.veryHealthy;
     this.glutenFree=this.recipe_object.glutenFree;
     this.dairyFree=this.recipe_object.dairyFree;
-    //console.log(typeof(this.recipe_object.image))
-    console.log(this.image);
-    console.log(this.recipe_object.vegetarian);
-  }*/
-  data_retrieval(){
+
+    var str = this.recipe_object.summary;
+    //var str1 = document.createElement('str1');
+    //str1.innerHTML = str;
+    document.getElementById('summary').innerHTML=str;
+    //alert(str1.textContent);
+    //alert(str1.innerText);
+
+    this.servings=this.recipe_object.servings;
+    console.log(this.recipe_object.extendedIngredients.length);
+    this.numberOfIngredients=this.recipe_object.extendedIngredients.length;
+    this.readyInMinutes=this.recipe_object.readyInMinutes;
+    this.price=Math.round(((this.recipe_object.pricePerServing)*0.75)*this.servings);
+
+    //console.log(this.recipe_object.extendedIngredients);
+    for(this.i=0;this.i<this.recipe_object.extendedIngredients.length;this.i++){
+        //console.log(this.recipe_object.extendedIngredients[this.i].nameClean);
+        //console.log(this.recipe_object.extendedIngredients[this.i].amount+' '+
+          //          this.recipe_object.extendedIngredients[this.i].unit);
+        //console.log(this.recipe_object.analyzedInstructions[0].steps.length);
+        this.ingredientsNameList.push(' '+this.recipe_object.extendedIngredients[this.i].nameClean);
+        this.ingredientsQunatityList.push(this.recipe_object.extendedIngredients[this.i].amount+' '+
+                                            this.recipe_object.extendedIngredients[this.i].unit)
+    }
+    for(this.i=0;this.i<this.recipe_object.analyzedInstructions[0].steps.length;this.i++){
+        this.recipeInstrucations.push(this.recipe_object.analyzedInstructions[0].steps[this.i].step);
+        if(this.recipe_object.analyzedInstructions[0].steps[this.i].equipment.length!=0){
+            for(this.j=0;this.j<this.recipe_object.analyzedInstructions[0].steps[this.i].equipment.length;this.j++){
+                console.log(this.recipe_object.analyzedInstructions[0].steps[this.i].equipment[this.j].localizedName);
+                this.equipmentList.push(this.recipe_object.analyzedInstructions[0].steps[this.i].equipment[this.j].localizedName);
+        }
+    }
+    /*for(this.i=0;this.i<this.recipe_object.cuisines.length;this.i++){
+        this.recipeTag.push(this.recipe_object.cuisines)
+    }*/
+
+    
+  }
+    for(this.i=0;this.i<this.recipe_object.cuisines.length;this.i++)
+        this.cuisines.push(this.recipe_object.cuisines[this.i]);
+
+    console.log(this.recipe_object.dishTypes);
+    for(this.i=0;this.i<this.recipe_object.dishTypes.length;this.i++)
+        this.recipeTag.push(this.recipe_object.dishTypes[this.i]);
+  
+    
+  }
+
+  
+  data_retrieval_json(){
     this.name=this.recipe_object.title;
     this.image=this.recipe_object.image
     this.healthy=this.recipe_object.veryHealthy;
@@ -648,7 +701,7 @@ export class FoodRecipeComponent implements OnInit {
         this.recipeInstrucations.push(this.recipe_object.analyzedInstructions[0].steps[this.i].step);
         if(this.recipe_object.analyzedInstructions[0].steps[this.i].equipment.length!=0){
             for(this.j=0;this.j<this.recipe_object.analyzedInstructions[0].steps[this.i].equipment.length;this.j++){
-                //console.log(this.recipe_object.analyzedInstructions[0].steps[this.i].equipment[this.j].localizedName);
+                console.log(this.recipe_object.analyzedInstructions[0].steps[this.i].equipment[this.j].localizedName);
                 this.equipmentList.push(this.recipe_object.analyzedInstructions[0].steps[this.i].equipment[this.j].localizedName);
         }
     }

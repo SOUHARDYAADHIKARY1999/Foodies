@@ -26,6 +26,8 @@ var usersRouter = require('./routes/users.router');
 var foodsRouter = require('./routes/foods.router');
 var recipesRouter = require('./routes/recipes.router');
 var homeRouter = require('./routes/home.router');
+var wrapFoodRouter =require('./routes/wrapfoods.router');
+var cartItemRouter = require('./routes/cart-item.router');
 
 
 
@@ -55,6 +57,8 @@ app.use('/users', usersRouter);
 app.use('/recipes',recipesRouter);
 app.use('/foods',foodsRouter);
 app.use('/home',homeRouter);
+app.use('/wrap-food',wrapFoodRouter);
+app.use('/cart-item',cartItemRouter);
 
 
 app.use(express.json({extended:false}));

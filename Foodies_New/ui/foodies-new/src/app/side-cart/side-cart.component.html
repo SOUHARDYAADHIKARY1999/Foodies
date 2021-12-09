@@ -1,0 +1,18 @@
+<span><p>Cart</p></span>
+<ul >
+    <li *ngFor="let i of cartArray">
+        <div class="cart-item">
+            <img *ngIf="i.cartItemVeg" src="assets/img/non-veg-item-symbol.png" style="height: 10px; width: 10px;">
+            <img *ngIf="!i.cartItemVeg" src="assets/img/veg-item-symbol.png" style="height: 10px; width: 10px;">
+            <span style="margin-left: 5px; font-size: small;">{{i.cartItemName}}</span>
+            <span style="margin-left: 5px; font-size: small;">x {{i.cartItemQuantity}}</span>
+            <span style=" font-size: small; float: right;">₹{{i.foodPrice}}</span>
+        </div>
+    </li>
+</ul>
+<div style="display: inline-block; width: 100%;">
+    <span><b>SubTotal</b></span>
+    <span style="float: right;"> ₹{{subTotal}}</span>
+</div>
+<span style="font-size: 13px; color: rgb(165, 165, 165);">Extra charges may apply</span>
+<button class="btn btn-warning" style="width: 100%;">CHECKOUT</button>

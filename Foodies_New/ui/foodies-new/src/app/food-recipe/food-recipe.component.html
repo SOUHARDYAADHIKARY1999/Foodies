@@ -18,11 +18,9 @@
                         <tr>
                             <td>
                                 <div *ngIf="veg">
-                                    <img src="assets/img/vegetarian.png" class="info-img" />
+                                    <img src="assets/img/vegetarian.svg" class="info-img" />
                                     <p class="info-text">vegetarian</p>
                                 </div>
-                            </td>
-                            <td>
                                 <div *ngIf="!veg">
                                     <img src="assets/img/non-veg.png" class="info-img" />
                                     <p class="info-text">non vegetarian</p>
@@ -43,8 +41,6 @@
                                     <img src="assets/img/dairy-free.svg" class="info-img" />
                                     <p class="info-text">dairy-free</p>
                                 </div>
-                            </td>
-                            <td>
                                 <div *ngIf="!dairyFree">
                                     <img src="assets/img/dairy.png" class="info-img" />
                                     <p class="info-text">dairy-product</p>
@@ -159,7 +155,9 @@
             </li>
         </ul>
         <!--<a href="foodrecipe#name"> ppkpkpkpkpkpk</a>-->
+        <div class="recipe-link-container">
+            <a  href="recipes" class="recipe-page-link"> <b>Discover more recipes from Foodies</b></a>
+        </div>
         <div style="height: 200px;"></div>
-        
     </div>
 </div>
