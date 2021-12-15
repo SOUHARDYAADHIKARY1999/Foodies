@@ -1,0 +1,30 @@
+<div class="fitter" style="background-color: #F5F5F6;">
+    <div class="container" style="background-color: #F5F5F6;">
+        <br>
+        <div style="display: inline-block;">
+            <img src="assets/img/tick.png" style="height: 20px; width: 20px;">
+            <p style="font-size: large;"><b>You are logged In</b></p>
+        </div>
+        <br>
+        <div>
+            <p style="display: inline-block; margin: 10px;text-align: center;"><b>Click to pay using Google Pay</b></p>
+            <div  style="display: inline-block;margin-top: 20px;">
+            <google-pay-button 
+                environment="TEST"
+                buttonType="buy"
+                buttonColor="black"
+                [paymentRequest]="paymentRequest"
+                (loadpaymentdata)="onLoadPaymentData($event)"
+                (error)="onError($event)"
+                [paymentAuthorizedCallback]="onPaymentDataAuthorized">
+            </google-pay-button>
+        </div>
+        </div>
+        <div>
+            <img src="assets/img/back.jpeg" style="width: 700px;"> 
+        </div>
+        <div class="sidenav-right">
+            <app-side-cart></app-side-cart>    
+        </div>
+    </div>
+</div>

@@ -10,10 +10,12 @@ import { environment } from 'src/environments/environment.dev';
 export class AuthService {
 
   selectedUser:UserModel={
+    phoneNumber:'',
     firstName: '',
     lastName: '',
     email: '',
-    password: ''
+    password: '',
+    admin:false
   }
 
   noAuthHeader = {headers : new HttpHeaders({'NoAuth':'True'})}

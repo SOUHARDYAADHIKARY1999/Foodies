@@ -1,22 +1,28 @@
 const mongoose = require('mongoose');
 const passport = require('passport');
 const _ = require('lodash');
+const { sendMsg } = require("../msg/whatsapp");
 
 const userModel=require('../models/users.model');
+const { use } = require('passport');
 
 //const User =mongoose.model('Users');
 
 module.exports.register=(req,res,next)=>{
     var user=new userModel();
+    user.phoneNumber=req.body.phoneNumber;
     user.firstName=req.body.firstName;
     user.lastName=req.body.lastName;
     user.email=req.body.email;
     user.password=req.body.password;
-    user.save((err,doc)=>{
+    user.admin=req.body.admin;
+    user.save(async(err,doc)=>{
         if(!err){
             //console.log(doc);
             //console.log(err);
             res.send(doc);
+            const message = `Welcome ${req.body.firstName} ${req.body.lastName}! Welcome to Foodies , Continue eating with delicacy!`;
+            await sendMsg("+918910507749", message);
             //console.log("pingy");
         }
         else{
@@ -35,7 +41,7 @@ module.exports.register=(req,res,next)=>{
 
 module.exports.authenticate=(req, res, next) =>{
     // call for passport authentication
-    passport.authenticate('local',(err,user,info)=>{
+    passport.authenticate('local',async(err,user,info)=>{
         
         // error from passport middleware
         if(err){ 
@@ -44,10 +50,15 @@ module.exports.authenticate=(req, res, next) =>{
         // registered user
         else if(user){
             console.log("registered user");
+            console.log(user.phoneNumber);
+            const message = `Welcome ${req.body.firstName} ${req.body.lastName}! Welcome to Foodies , Continue eating with delicacy!`;
+            await sendMsg(user.phoneNumber, message);
+            console.log("first");
             return res.status(200).json({"token":user.generateJwt()});
         }
         // unknown user or password
         else{
+            console.log("ko");
             return res.status(404).json(info);
         }
     })(req,res);

@@ -7,6 +7,9 @@ require("dotenv").config();
 
 const userSchema=mongoose.Schema({
 
+    phoneNumber:{
+        type:String,
+    },
     firstName: {
         type:String,
         required: 'First name can\'t be empty'
@@ -24,6 +27,9 @@ const userSchema=mongoose.Schema({
         type: String,
         required: 'Password can\'t be empty',
         minlength : [4,'Password must be atleast 4 character long']
+    },
+    admin:{
+        type:Boolean,
     },
     saltSecret:String
 });

@@ -12,6 +12,7 @@ import { CloudKitchenComponent } from './cloud-kitchen/cloud-kitchen.component';
 import { FoodRecipeComponent } from './food-recipe/food-recipe.component';
 import { WrapFoodComponent } from './wrap-food/wrap-food.component';
 import { FoodCrudComponent } from './food-crud/food-crud.component';
+import { CartComponent } from './cart/cart.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
       path: 'food-crud',component:FoodCrudComponent
     },
     { path: 'home', component:HomeComponent },
+    { path: 'cart', component:CartComponent },
     { path: 'foods', component:FoodsComponent},
     
     {

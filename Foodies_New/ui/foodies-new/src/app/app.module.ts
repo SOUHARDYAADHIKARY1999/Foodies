@@ -41,6 +41,9 @@ import { AppMaterialModule } from './app.material.module';
 import { SideCartComponent } from './side-cart/side-cart.component';
 import { CartItemComponent } from './side-cart/cart-item/cart-item.component';
 import { FoodCrudComponent } from './food-crud/food-crud.component';
+import { CartComponent } from './cart/cart.component';
+import { AgmCoreModule } from '@agm/core';
+import { GooglePayButtonModule } from '@google-pay/button-angular';
 
 
 
@@ -63,6 +66,7 @@ import { FoodCrudComponent } from './food-crud/food-crud.component';
     SideCartComponent,
     CartItemComponent,
     FoodCrudComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,8 @@ import { FoodCrudComponent } from './food-crud/food-crud.component';
     IvyCarouselModule,
     CarouselModule,
     AppMaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    GooglePayButtonModule
     //RouterModule.forRoot(appRoutes)
   ],
   providers: [{
